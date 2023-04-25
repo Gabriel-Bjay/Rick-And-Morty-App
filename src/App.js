@@ -3,7 +3,7 @@ import "bootstrap/dist/js/bootstrap";
 import React, { useState, useEffect } from "react";
 
 import Card from "./components/Card/Card";
-// import Filter from "./components/Filter/Filter";
+import Filter from "./components/Filter/Filter";
 import Pagination from "./components/Pagination/Pagination";
 // import Navbar from "./components/Navbar/Navbar";
 import Search from "./components/Search/Search";
@@ -18,9 +18,12 @@ function App() {
 
   const [pageNumber, setPageNumber] = useState(1);
   const [search, setSearch] = useState("");
+  let [status, setStatus] = useState("");
+  const [gender, setGender] = useState("");
+  const [species, setSpecies] = useState("");
 
 
-  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber} &name=${search}`
+  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber} &name=${search}&status=${status}&gender=${gender}&species=${species}`
 
   useEffect(() => {
     (async  () => {
@@ -36,7 +39,14 @@ function App() {
       <Search setSearch={setSearch} setPageNumber={setPageNumber}/>
       <div className="container">
         <div className="row">
-          Filter component will be placed here
+        <Filter
+          pageNumber={pageNumber}
+          status={status}
+          setStatus={setStatus}
+          setGender={setGender}
+          setSpecies={setSpecies}
+          setPageNumber={setPageNumber}
+        />
             <div className="col-lg-8 col-12">
               <div className="row">
                 <Card results={results} />                
