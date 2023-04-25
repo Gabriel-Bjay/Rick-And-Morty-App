@@ -3,22 +3,24 @@ import "bootstrap/dist/js/bootstrap";
 import React, { useState, useEffect } from "react";
 
 import Card from "./components/Card/Card";
-import Filter from "./components/Filter/Filter";
+// import Filter from "./components/Filter/Filter";
 import Pagination from "./components/Pagination/Pagination";
-import Navbar from "./components/Navbar/Navbar";
+// import Navbar from "./components/Navbar/Navbar";
 import Search from "./components/Search/Search";
 
 
 
 
 function App() {
-  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber} &name=${search}`
 
   const [fetchedData, setFetchedData] = useState([]);
   const {info,results} = fetchedData;
 
   const [pageNumber, setPageNumber] = useState(1);
   const [search, setSearch] = useState("");
+
+
+  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber} &name=${search}`
 
   useEffect(() => {
     (async  () => {
@@ -37,13 +39,19 @@ function App() {
           Filter component will be placed here
             <div className="col-lg-8 col-12">
               <div className="row">
-                <Card results={results} />
+                <Card results={results} />                
               </div>
             </div>
         </div>
       </div>
+      <Pagination 
+      info={info}
+      pageNumber={pageNumber}
+      setPageNumber={setPageNumber}/>
     </div>
   );
 }
+
+
 
 export default App;
