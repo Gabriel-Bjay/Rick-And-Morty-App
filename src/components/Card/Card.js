@@ -17,6 +17,7 @@ const Card = ({ results }) => {
                     </div>
                 </div>
             </div>
+            
         );
       });
       }
@@ -26,4 +27,7 @@ const Card = ({ results }) => {
   
     return <div>{display}</div>;
   }
+
+  
+  
 export default Card

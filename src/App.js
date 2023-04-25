@@ -12,10 +12,13 @@ import Search from "./components/Search/Search";
 
 
 function App() {
-  const api = `https://rickandmortyapi.com/api/character/?page=1`
+  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber} &name=${search}`
 
   const [fetchedData, setFetchedData] = useState([]);
   const {info,results} = fetchedData;
+
+  const [pageNumber, setPageNumber] = useState(1);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     (async  () => {
@@ -28,6 +31,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="text-center mb-3">Characters</h1>
+      <Search setSearch={setSearch} setPageNumber={setPageNumber}/>
       <div className="container">
         <div className="row">
           Filter component will be placed here
