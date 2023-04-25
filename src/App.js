@@ -5,14 +5,14 @@ import React, { useState, useEffect } from "react";
 import Card from "./components/Card/Card";
 import Filter from "./components/Filter/Filter";
 import Pagination from "./components/Pagination/Pagination";
-// import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import Search from "./components/Search/Search";
+import Episodes from "./Pages/Episodes";
+import Location from "./Pages/Location";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
-
-
-function App() {
-
+const Home = () => {
   const [fetchedData, setFetchedData] = useState([]);
   const {info,results} = fetchedData;
 
@@ -60,6 +60,25 @@ function App() {
       setPageNumber={setPageNumber}/>
     </div>
   );
+}
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route path="/episodes" element={<Episodes />} />
+
+        <Route path="/location" element={<Location />} />
+      </Routes>
+    </Router>
+
+    
+  ); 
 }
 
 
