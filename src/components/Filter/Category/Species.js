@@ -16,7 +16,7 @@ return (
       className="accordion-button collapsed" type="button"
       data-bs-toggle="collapse" data-bs-target="#collapseTwo"
       aria-expanded="false" aria-controls="collapseTwo"
-    > {species} </button>
+    > Species </button>
   </h2>
 
         <div

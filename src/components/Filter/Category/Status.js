@@ -9,7 +9,7 @@ const Status = ({ setStatus, setPageNumber }) => {
           className="accordion-button" type="button"
           data-bs-toggle="collapse" data-bs-target="#collapseOne"
           aria-expanded="true" aria-controls="collapseOne"
-        > {status} </button>
+        > Status </button>
       </h2>
 
         <div

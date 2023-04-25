@@ -3,6 +3,7 @@ import React from "react";
 // import Species from "./category/Species";
 import Status from "./Category/Status";
 import Species from "./Category/Species";
+import Gender from "./Category/Gender";
 
 const Filter = ({
     pageNumber,
@@ -34,6 +35,10 @@ const Filter = ({
             <Species
               setPageNumber={setPageNumber}
               setSpecies={setSpecies}
+            />
+            <Gender
+            setPageNumber={setPageNumber}
+            setGender={setGender}
             />
           </div>
         </div>
