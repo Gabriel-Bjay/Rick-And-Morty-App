@@ -1,7 +1,7 @@
 import React from "react";
 // import Gender from "./category/Gender";
 // import Species from "./category/Species";
-// import Status from "./category/Status";
+import Status from "./Category/Status";
 
 const Filter = ({
     pageNumber,
@@ -26,7 +26,10 @@ const Filter = ({
             className="text-primary text-decoration-underline text-center mb-3"
           > Clear Filters </div>
           <div className="accordion" id="accordionExample">
-            {/* Category components will be placed here */}
+          <Status
+            setPageNumber={setPageNumber}
+            setStatus={setStatus}
+            />
           </div>
         </div>
         );
