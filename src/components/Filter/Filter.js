@@ -1,6 +1,4 @@
 import React from "react";
-// import Gender from "./category/Gender";
-// import Species from "./category/Species";
 import Status from "./Category/Status";
 import Species from "./Category/Species";
 import Gender from "./Category/Gender";
