@@ -1,7 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
 import React, { useState, useEffect } from "react";
-
 import Card from "./components/Card/Card";
 import Filter from "./components/Filter/Filter";
 import Pagination from "./components/Pagination/Pagination";
@@ -9,7 +8,10 @@ import Navbar from "./components/Navbar/Navbar";
 import Search from "./components/Search/Search";
 import Episodes from "./Pages/Episodes";
 import Location from "./Pages/Location";
+import CardDetails from "./components/Card/CardDetails";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+
 
 
 const Home = () => {
@@ -49,7 +51,7 @@ const Home = () => {
         />
             <div className="col-lg-8 col-12">
               <div className="row">
-                <Card results={results} />                
+                <Card page="/" results={results} />              
               </div>
             </div>
         </div>
@@ -69,11 +71,17 @@ function App() {
         <Navbar />
       </div>
       <Routes>
+
         <Route path="/" element={<Home />} />
 
         <Route path="/episodes" element={<Episodes />} />
 
         <Route path="/location" element={<Location />} />
+        <Routes>
+          <Route path="/:id" element={<CardDetails />} />
+          <Route path="/episodes/:id" element={<CardDetails />} />
+          <Route path="/location/:id" element={<CardDetails />} />
+        </Routes>
       </Routes>
     </Router>
 
