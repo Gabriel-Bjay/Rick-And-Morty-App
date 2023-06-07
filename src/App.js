@@ -77,11 +77,11 @@ function App() {
         <Route path="/episodes" element={<Episodes />} />
 
         <Route path="/location" element={<Location />} />
-        
+        <Route>
           <Route path="/:id" element={<CardDetails />} />
           <Route path="/episodes/:id" element={<CardDetails />} />
           <Route path="/location/:id" element={<CardDetails />} />
-        
+        </Route>
       </Routes>
     </>
 
