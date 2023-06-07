@@ -1,5 +1,7 @@
 import styles from "./Card.module.scss"
-const Card = ({ results }) => {
+import { Link } from "react-router-dom";
+
+const Card = ({ page, results }) => {
     let display;
   
     if (results){
@@ -7,7 +9,7 @@ const Card = ({ results }) => {
         let { id, image, name, status, location } = x;
 
         
-      
+          
           return (
             <div className={`${styles.card} d-flex flex-column justify-content-center`}>
                 <img className={`${styles.img} img-fluid`} src={image} alt="" />
