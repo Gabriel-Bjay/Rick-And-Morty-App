@@ -52,3 +52,4 @@ let api = `https://rickandmortyapi.com/api/character/${id}`;
 )
 }
 
+export default CardDetails

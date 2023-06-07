@@ -8,8 +8,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Search from "./components/Search/Search";
 import Episodes from "./Pages/Episodes";
 import Location from "./Pages/Location";
-import CardDetails from "./components/Card/CardDetails";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CardDetails from './components/Card/CardDetails'
+import {  Routes, Route } from "react-router-dom";
 
 
 
@@ -66,7 +66,7 @@ const Home = () => {
 
 function App() {
   return (
-    <Router>
+    <>
       <div className="App">
         <Navbar />
       </div>
@@ -77,13 +77,13 @@ function App() {
         <Route path="/episodes" element={<Episodes />} />
 
         <Route path="/location" element={<Location />} />
-        <Routes>
+        
           <Route path="/:id" element={<CardDetails />} />
           <Route path="/episodes/:id" element={<CardDetails />} />
           <Route path="/location/:id" element={<CardDetails />} />
-        </Routes>
+        
       </Routes>
-    </Router>
+    </>
 
     
   ); 
